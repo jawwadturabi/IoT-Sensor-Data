@@ -1,0 +1,17 @@
+.headerMain {
+  background-color: #242f3f;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0 10px #000;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+h2,
+h3 {
+  color: #fff !important;
+  text-decoration: none !important;
+}

@@ -1,0 +1,4 @@
+{
+  "IoTRuleName": "testSensorRule",
+  "IoTRuleSQL": "SELECT * FROM 'iot/topic'"
+}

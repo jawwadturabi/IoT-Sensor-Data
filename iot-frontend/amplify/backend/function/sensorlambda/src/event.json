@@ -1,0 +1,13 @@
+{
+  "test_data": {
+    "deviceId": "test_mqtt",
+    "deviceType": "Water Heater",
+    "payload": {
+      "currentTemp": "22.34",
+      "pressure": "0.34",
+      "uvIndex": "22.34",
+      "waterConsumption": "44.69",
+      "energyConsumption": "44.69"
+    }
+  }
+}

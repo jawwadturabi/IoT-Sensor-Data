@@ -1,0 +1,34 @@
+type IncomingData
+  @model(timestamps: { createdAt: null, updatedAt: null })
+  @key(fields: ["deviceId", "timestamp"]) {
+  deviceId: ID!
+  timestamp: AWSTimestamp!
+  deviceType: String!
+  payload: payloadObj!
+}
+type payloadObj {
+  currentTemp: Int!
+  pressure: Float!
+  uvIndex: String!
+  waterConsumption: Float!
+  energyConsumption: Float!
+}
+
+type UserDeviceMapping @model @key(fields: ["clientId", "deviceId"]) {
+  clientId: ID!
+  deviceId: ID!
+  timestamp: AWSTimestamp
+  deviceType: String
+}
+type OutgoingData
+  @model(timestamps: { createdAt: null, updatedAt: null })
+  @key(fields: ["deviceId", "timestamp"]) {
+  deviceId: ID!
+  timestamp: AWSTimestamp!
+  deviceType: String!
+  clientId: String!
+  payload: outGoingPayloadObj!
+}
+type outGoingPayloadObj {
+  setTemp: Int!
+}

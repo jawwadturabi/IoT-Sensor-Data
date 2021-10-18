@@ -1,0 +1,50 @@
+{
+  "Parameters": {
+    "env": {
+      "Type": "String"
+    },
+    "IoTRuleName": {
+      "Type": "String"
+    },
+    "functionsensorlambdaArn": {
+      "Type": "String"
+    },
+    "IoTRuleSQL": {
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "testSensorRule": {
+      "Type": "AWS::IoT::TopicRule",
+      "Properties": {
+        "RuleName": {
+          "Fn::Join": [
+            "",
+            [
+              {
+                "Ref": "IoTRuleName"
+              },
+              "_",
+              {
+                "Ref": "env"
+              }
+            ]
+          ]
+        },
+        "TopicRulePayload": {
+          "Actions": [
+            {
+              "Lambda": {
+                "FunctionArn": { "Ref": "functionsensorlambdaArn" }
+              }
+            }
+          ],
+          "RuleDisabled": false,
+          "Sql": {
+            "Ref": "IoTRuleSQL"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "paths": [
+    {
+      "name": "/shadow",
+      "lambdaFunction": "shadowlambda",
+      "privacy": {
+        "open": true
+      },
+      "policyResourceName": "/shadow"
+    }
+  ],
+  "resourceName": "shadowapi",
+  "apiName": "shadowapi",
+  "functionArns": [
+    {
+      "lambdaFunction": "shadowlambda"
+    }
+  ],
+  "privacy": {
+    "auth": 0,
+    "unauth": 0,
+    "authRoleName": "amplify-iotfrontend-dev-161330-authRole",
+    "unAuthRoleName": "amplify-iotfrontend-dev-161330-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "shadowlambda",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}
