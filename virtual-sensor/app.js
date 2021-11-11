@@ -2,9 +2,9 @@ const awsIot = require("aws-iot-device-sdk");
 const { v4: uuidv4 } = require("uuid");
 const device = awsIot.device({
   keyPath:
-    "./cert/162d94e4c08b95e14f6e9a900d35a96b28e76d978d411f9428ca6d29a944c4c3-private.pem.key",
+    "./cert/7fd8579b7ab08f6a9fa0031393a1f7c8d5df6c904aa302353edfdafc1b086917-private.pem.key",
   certPath:
-    "./cert/162d94e4c08b95e14f6e9a900d35a96b28e76d978d411f9428ca6d29a944c4c3-certificate.pem.crt",
+    "./cert/7fd8579b7ab08f6a9fa0031393a1f7c8d5df6c904aa302353edfdafc1b086917-certificate.pem.crt",
   caPath: "./cert/AmazonRootCA1.pem",
   clientId: "test_mqtt",
   region: "us-east-1",
@@ -36,6 +36,7 @@ device.on("connect", () => {
     console.log("Message sent : ", payload);
   }, 10000);
 });
+
 device.on("message", (topic, payload) => {
   console.log("Message", topic, payload.toString());
 });

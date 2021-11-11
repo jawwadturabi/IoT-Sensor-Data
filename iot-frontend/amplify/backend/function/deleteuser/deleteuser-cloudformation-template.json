@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "shadowlambda",
+            "deleteuser",
             {
               "Fn::Join": [
                 "",
                 [
-                  "shadowlambda",
+                  "deleteuser",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "iotfrontendLambdaRolec4257633",
+            "iotfrontendLambdaRolebc1dc009",
             {
               "Fn::Join": [
                 "",
                 [
-                  "iotfrontendLambdaRolec4257633",
+                  "iotfrontendLambdaRolebc1dc009",
                   "-",
                   {
                     "Ref": "env"

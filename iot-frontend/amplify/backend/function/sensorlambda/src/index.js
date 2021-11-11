@@ -32,12 +32,12 @@ exports.handler = async (event) => {
   };
   const config = {
     headers: {
-      "X-API-Key": "da2-ycnse5hedbbztfros7valxnnum",
+      "X-API-Key": "da2-kmgplxiadnbfhplmybmkck2exu",
     },
   };
   return axios
     .post(
-      "https://qhifiojihjeubcbyh3x2k2u6my.appsync-api.us-east-1.amazonaws.com/graphql",
+      "https://bj42hmzyc5gezffh4zqnw3xzri.appsync-api.us-east-1.amazonaws.com/graphql",
       body,
       config
     )

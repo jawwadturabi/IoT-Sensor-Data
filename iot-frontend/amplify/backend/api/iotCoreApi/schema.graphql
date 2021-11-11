@@ -1,8 +1,18 @@
 type IncomingData
-  @model(timestamps: { createdAt: null, updatedAt: null })
-  @key(fields: ["deviceId", "timestamp"]) {
+  @model(
+    mutations: { create: "createIncomingData" }
+    timestamps: { createdAt: null, updatedAt: null }
+    subscriptions: { onCreate: ["onCreateIncomingData"] }
+    queries: null
+  )
+  @key(fields: ["deviceId", "timestamp"])
+  @key(
+    name: "byTimestamp"
+    fields: ["deviceId", "timestamp"]
+    queryField: "dataByTimestamp"
+  ) {
   deviceId: ID!
-  timestamp: AWSTimestamp!
+  timestamp: String!
   deviceType: String!
   payload: payloadObj!
 }
@@ -14,21 +24,40 @@ type payloadObj {
   energyConsumption: Float!
 }
 
-type UserDeviceMapping @model @key(fields: ["clientId", "deviceId"]) {
+type UserDeviceMapping
+  @model(
+    mutations: { delete: "deleteUser", create: "createUser" }
+    subscriptions: { onDelete: ["onDeletedUser"] }
+    timestamps: { createdAt: null, updatedAt: null }
+  )
+  @key(fields: ["clientId", "deviceId"]) {
   clientId: ID!
   deviceId: ID!
-  timestamp: AWSTimestamp
+  timestamp: String
   deviceType: String
 }
 type OutgoingData
-  @model(timestamps: { createdAt: null, updatedAt: null })
+  @model(
+    mutations: { create: "createOutgoingData" }
+    timestamps: { createdAt: null, updatedAt: null }
+    subscriptions: null
+    queries: null
+  )
   @key(fields: ["deviceId", "timestamp"]) {
   deviceId: ID!
-  timestamp: AWSTimestamp!
+  timestamp: String!
   deviceType: String!
   clientId: String!
   payload: outGoingPayloadObj!
 }
 type outGoingPayloadObj {
   setTemp: Int!
+}
+type Mutation {
+  updateUserStatus(clientId: String, deviceId: String): UserDeviceMapping
+    @function(name: "updateuser-${env}")
+}
+type Subscription {
+  onUpdatedUser: UserDeviceMapping
+    @aws_subscribe(mutations: ["updateUserStatus"])
 }

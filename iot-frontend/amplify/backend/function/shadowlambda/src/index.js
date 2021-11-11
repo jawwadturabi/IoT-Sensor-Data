@@ -6,6 +6,7 @@ exports.handler = async (event) => {
   // TODO implement
   console.log("event", event);
   const params = event.queryStringParameters;
+  console.log("params", params);
   let body;
   let statusCode = 200;
   let headers = {
@@ -24,7 +25,11 @@ exports.handler = async (event) => {
         payload: JSON.stringify({
           state: {
             desired: {
-              temperature: params.temperature,
+              SetTemp: params.setTemp,
+            },
+            reported: {
+              CurrentTemp: params.currentTemp,
+              SetTemp: params.setTemp,
             },
           },
         }),

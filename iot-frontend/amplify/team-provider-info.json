@@ -18,11 +18,19 @@
       "function": {
         "sensorlambda": {
           "deploymentBucketName": "amplify-iotfrontend-dev-161330-deployment",
-          "s3Key": "amplify-builds/sensorlambda-2f4e4142754961437932-build.zip"
+          "s3Key": "amplify-builds/sensorlambda-74727a3936597a482b59-build.zip"
         },
         "shadowlambda": {
           "deploymentBucketName": "amplify-iotfrontend-dev-161330-deployment",
-          "s3Key": "amplify-builds/shadowlambda-79544d5461776b702f2f-build.zip"
+          "s3Key": "amplify-builds/shadowlambda-34316758754261726a66-build.zip"
+        },
+        "deleteuser": {
+          "deploymentBucketName": "amplify-iotfrontend-dev-161330-deployment",
+          "s3Key": "amplify-builds/deleteuser-37333875756c486a3175-build.zip"
+        },
+        "updateuser": {
+          "deploymentBucketName": "amplify-iotfrontend-dev-161330-deployment",
+          "s3Key": "amplify-builds/updateuser-57644679615770566251-build.zip"
         }
       }
     }

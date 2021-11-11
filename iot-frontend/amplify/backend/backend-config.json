@@ -49,6 +49,17 @@
     "shadowlambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": []
+    },
+    "deleteuser": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "updateuser": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },

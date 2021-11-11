@@ -47,12 +47,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "shadowlambda",
+            "updateuser",
             {
               "Fn::Join": [
                 "",
                 [
-                  "shadowlambda",
+                  "updateuser",
                   "-",
                   {
                     "Ref": "env"
@@ -89,12 +89,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "iotfrontendLambdaRolec4257633",
+            "iotfrontendLambdaRole72b382a4",
             {
               "Fn::Join": [
                 "",
                 [
-                  "iotfrontendLambdaRolec4257633",
+                  "iotfrontendLambdaRole72b382a4",
                   "-",
                   {
                     "Ref": "env"

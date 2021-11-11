@@ -1,6 +1,14 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const onUpdatedUser = /* GraphQL */ `
+  subscription OnUpdatedUser {
+    onUpdatedUser {
+      clientId
+      deviceId
+    }
+  }
+`;
 export const onCreateIncomingData = /* GraphQL */ `
   subscription OnCreateIncomingData {
     onCreateIncomingData {
@@ -17,110 +25,13 @@ export const onCreateIncomingData = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateIncomingData = /* GraphQL */ `
-  subscription OnUpdateIncomingData {
-    onUpdateIncomingData {
-      deviceId
-      timestamp
-      deviceType
-      payload {
-        currentTemp
-        pressure
-        uvIndex
-        waterConsumption
-        energyConsumption
-      }
-    }
-  }
-`;
-export const onDeleteIncomingData = /* GraphQL */ `
-  subscription OnDeleteIncomingData {
-    onDeleteIncomingData {
-      deviceId
-      timestamp
-      deviceType
-      payload {
-        currentTemp
-        pressure
-        uvIndex
-        waterConsumption
-        energyConsumption
-      }
-    }
-  }
-`;
-export const onCreateUserDeviceMapping = /* GraphQL */ `
-  subscription OnCreateUserDeviceMapping {
-    onCreateUserDeviceMapping {
+export const onDeletedUser = /* GraphQL */ `
+  subscription OnDeletedUser {
+    onDeletedUser {
       clientId
       deviceId
       timestamp
       deviceType
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateUserDeviceMapping = /* GraphQL */ `
-  subscription OnUpdateUserDeviceMapping {
-    onUpdateUserDeviceMapping {
-      clientId
-      deviceId
-      timestamp
-      deviceType
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteUserDeviceMapping = /* GraphQL */ `
-  subscription OnDeleteUserDeviceMapping {
-    onDeleteUserDeviceMapping {
-      clientId
-      deviceId
-      timestamp
-      deviceType
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onCreateOutgoingData = /* GraphQL */ `
-  subscription OnCreateOutgoingData {
-    onCreateOutgoingData {
-      deviceId
-      timestamp
-      deviceType
-      clientId
-      payload {
-        setTemp
-      }
-    }
-  }
-`;
-export const onUpdateOutgoingData = /* GraphQL */ `
-  subscription OnUpdateOutgoingData {
-    onUpdateOutgoingData {
-      deviceId
-      timestamp
-      deviceType
-      clientId
-      payload {
-        setTemp
-      }
-    }
-  }
-`;
-export const onDeleteOutgoingData = /* GraphQL */ `
-  subscription OnDeleteOutgoingData {
-    onDeleteOutgoingData {
-      deviceId
-      timestamp
-      deviceType
-      clientId
-      payload {
-        setTemp
-      }
     }
   }
 `;

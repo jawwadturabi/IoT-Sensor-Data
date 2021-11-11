@@ -10,10 +10,17 @@ body {
 }
 .cardMain {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 .mainHeading {
   color: #dddddd;
   margin: 40px 0;
+  padding-left: 20px;
+}
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
 }

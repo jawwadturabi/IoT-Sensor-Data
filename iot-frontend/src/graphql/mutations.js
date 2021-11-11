@@ -1,6 +1,16 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const updateUserStatus = /* GraphQL */ `
+  mutation UpdateUserStatus($clientId: String, $deviceId: String) {
+    updateUserStatus(clientId: $clientId, deviceId: $deviceId) {
+      clientId
+      deviceId
+      timestamp
+      deviceType
+    }
+  }
+`;
 export const createIncomingData = /* GraphQL */ `
   mutation CreateIncomingData(
     $input: CreateIncomingDataInput!
@@ -20,86 +30,29 @@ export const createIncomingData = /* GraphQL */ `
     }
   }
 `;
-export const updateIncomingData = /* GraphQL */ `
-  mutation UpdateIncomingData(
-    $input: UpdateIncomingDataInput!
-    $condition: ModelIncomingDataConditionInput
-  ) {
-    updateIncomingData(input: $input, condition: $condition) {
-      deviceId
-      timestamp
-      deviceType
-      payload {
-        currentTemp
-        pressure
-        uvIndex
-        waterConsumption
-        energyConsumption
-      }
-    }
-  }
-`;
-export const deleteIncomingData = /* GraphQL */ `
-  mutation DeleteIncomingData(
-    $input: DeleteIncomingDataInput!
-    $condition: ModelIncomingDataConditionInput
-  ) {
-    deleteIncomingData(input: $input, condition: $condition) {
-      deviceId
-      timestamp
-      deviceType
-      payload {
-        currentTemp
-        pressure
-        uvIndex
-        waterConsumption
-        energyConsumption
-      }
-    }
-  }
-`;
-export const createUserDeviceMapping = /* GraphQL */ `
-  mutation CreateUserDeviceMapping(
+export const createUser = /* GraphQL */ `
+  mutation CreateUser(
     $input: CreateUserDeviceMappingInput!
     $condition: ModelUserDeviceMappingConditionInput
   ) {
-    createUserDeviceMapping(input: $input, condition: $condition) {
+    createUser(input: $input, condition: $condition) {
       clientId
       deviceId
       timestamp
       deviceType
-      createdAt
-      updatedAt
     }
   }
 `;
-export const updateUserDeviceMapping = /* GraphQL */ `
-  mutation UpdateUserDeviceMapping(
-    $input: UpdateUserDeviceMappingInput!
-    $condition: ModelUserDeviceMappingConditionInput
-  ) {
-    updateUserDeviceMapping(input: $input, condition: $condition) {
-      clientId
-      deviceId
-      timestamp
-      deviceType
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const deleteUserDeviceMapping = /* GraphQL */ `
-  mutation DeleteUserDeviceMapping(
+export const deleteUser = /* GraphQL */ `
+  mutation DeleteUser(
     $input: DeleteUserDeviceMappingInput!
     $condition: ModelUserDeviceMappingConditionInput
   ) {
-    deleteUserDeviceMapping(input: $input, condition: $condition) {
+    deleteUser(input: $input, condition: $condition) {
       clientId
       deviceId
       timestamp
       deviceType
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -109,38 +62,6 @@ export const createOutgoingData = /* GraphQL */ `
     $condition: ModelOutgoingDataConditionInput
   ) {
     createOutgoingData(input: $input, condition: $condition) {
-      deviceId
-      timestamp
-      deviceType
-      clientId
-      payload {
-        setTemp
-      }
-    }
-  }
-`;
-export const updateOutgoingData = /* GraphQL */ `
-  mutation UpdateOutgoingData(
-    $input: UpdateOutgoingDataInput!
-    $condition: ModelOutgoingDataConditionInput
-  ) {
-    updateOutgoingData(input: $input, condition: $condition) {
-      deviceId
-      timestamp
-      deviceType
-      clientId
-      payload {
-        setTemp
-      }
-    }
-  }
-`;
-export const deleteOutgoingData = /* GraphQL */ `
-  mutation DeleteOutgoingData(
-    $input: DeleteOutgoingDataInput!
-    $condition: ModelOutgoingDataConditionInput
-  ) {
-    deleteOutgoingData(input: $input, condition: $condition) {
       deviceId
       timestamp
       deviceType
