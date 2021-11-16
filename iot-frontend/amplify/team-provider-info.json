@@ -12,9 +12,6 @@
       "AmplifyAppId": "d2k802s6f4dsnh"
     },
     "categories": {
-      "auth": {
-        "iotfrontend91ff3835": {}
-      },
       "function": {
         "sensorlambda": {
           "deploymentBucketName": "amplify-iotfrontend-dev-161330-deployment",
@@ -32,6 +29,9 @@
           "deploymentBucketName": "amplify-iotfrontend-dev-161330-deployment",
           "s3Key": "amplify-builds/updateuser-57644679615770566251-build.zip"
         }
+      },
+      "auth": {
+        "IoTCoreApp": {}
       }
     }
   }

@@ -1,8 +1,6 @@
 {
-    "identityPoolName": "iotfrontend91ff3835_identitypool_91ff3835",
-    "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "iotfro91ff3835",
-    "userPoolName": "iotfrontend91ff3835_userpool_91ff3835",
+    "resourceNameTruncated": "iotfrof9a460bc",
+    "userPoolName": "IoTCoreUsers",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -20,6 +18,7 @@
     "requiredAttributes": [
         "email"
     ],
+    "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
@@ -28,11 +27,11 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "iotfro91ff3835_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
-    "sharedId": "91ff3835",
-    "resourceName": "iotfrontend91ff3835",
-    "authSelections": "identityPoolAndUserPool",
+    "userpoolClientLambdaRole": "IoTCorf9a460bc_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": true,
+    "sharedId": "f9a460bc",
+    "resourceName": "IoTCoreApp",
+    "authSelections": "userPoolOnly",
     "authRoleArn": {
         "Fn::GetAtt": [
             "AuthRole",
@@ -45,9 +44,21 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
+    "useDefault": "manual",
+    "usernameAttributes": [
+        "email"
+    ],
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "triggers": "{}",
+    "hostedUI": false,
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "breakCircularDependency": true,
+    "permissions": [],
     "dependsOn": []
 }

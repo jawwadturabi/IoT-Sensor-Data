@@ -107,7 +107,7 @@ function App() {
         <Header />
       </div>
       <Container>
-        {loading && DBUser ? (
+        {loading && !DBUser ? (
           <div className='heading'>
             <Loader width='50' height='50' color='#f57733' />
           </div>
