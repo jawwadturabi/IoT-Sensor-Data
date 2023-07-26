@@ -82,6 +82,13 @@
       "service": "Lambda"
     }
   },
+  "hosting": {
+    "amplifyhosting": {
+      "lastPushTimeStamp": "2023-07-26T12:55:35.964Z",
+      "service": "amplifyhosting",
+      "type": "cicd"
+    }
+  },
   "iotrule": {
     "testSensorRule": {
       "dependsOn": [
@@ -158,6 +165,22 @@
         {
           "category": "function",
           "resourceName": "updateuser"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_appId": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
+        }
+      ]
+    },
+    "AMPLIFY_hosting_amplifyhosting_type": {
+      "usedBy": [
+        {
+          "category": "hosting",
+          "resourceName": "amplifyhosting"
         }
       ]
     }

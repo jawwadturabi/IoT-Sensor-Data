@@ -75,6 +75,12 @@
       },
       "iotrule": {
         "testSensorRule": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d2qk7n17wvu8q",
+          "type": "cicd"
+        }
       }
     }
   }
