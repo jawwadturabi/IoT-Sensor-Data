@@ -35,7 +35,9 @@
           "Actions": [
             {
               "Lambda": {
-                "FunctionArn": { "Ref": "functionsensorlambdaArn" }
+                "FunctionArn": {
+                  "Ref": "functionsensorlambdaArn"
+                }
               }
             }
           ],
@@ -46,5 +48,6 @@
         }
       }
     }
-  }
+  },
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"11.1.0\",\"stackType\":\"iotrule\",\"metadata\":{}}"
 }

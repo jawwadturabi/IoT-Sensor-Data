@@ -6,6 +6,8 @@ export const onUpdatedUser = /* GraphQL */ `
     onUpdatedUser {
       clientId
       deviceId
+      timestamp
+      deviceType
     }
   }
 `;

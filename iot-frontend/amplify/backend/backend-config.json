@@ -1,65 +1,70 @@
 {
   "api": {
     "iotCoreApi": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
       "output": {
         "authConfig": {
+          "additionalAuthenticationProviders": [],
           "defaultAuthentication": {
-            "authenticationType": "API_KEY",
             "apiKeyConfig": {
               "apiKeyExpirationDays": 7,
               "description": ""
-            }
-          },
-          "additionalAuthenticationProviders": []
+            },
+            "authenticationType": "API_KEY"
+          }
         }
-      }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
     },
     "shadowapi": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "shadowlambda",
           "attributes": [
             "Name",
             "Arn"
-          ]
+          ],
+          "category": "function",
+          "resourceName": "shadowlambda"
         }
-      ]
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
     }
   },
-  "storage": {},
   "auth": {
     "IoTCoreApp": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
       "customAuth": false,
+      "dependsOn": [],
       "frontendAuthConfig": {
-        "loginMechanisms": [
-          "EMAIL"
-        ],
-        "signupAttributes": [
-          "EMAIL"
-        ],
-        "passwordProtectionSettings": {
-          "passwordPolicyMinLength": 8,
-          "passwordPolicyCharacters": []
-        },
         "mfaConfiguration": "OFF",
         "mfaTypes": [
           "SMS"
         ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
         "verificationMechanisms": [
           "EMAIL"
         ]
-      }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
     }
   },
   "function": {
+    "deleteuser": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "sensorlambda": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -67,12 +72,7 @@
     },
     "shadowlambda": {
       "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
-    },
-    "deleteuser": {
-      "build": true,
+      "dependsOn": [],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
@@ -84,16 +84,83 @@
   },
   "iotrule": {
     "testSensorRule": {
-      "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "sensorlambda",
           "attributes": [
             "Arn"
-          ]
+          ],
+          "category": "function",
+          "resourceName": "sensorlambda"
+        }
+      ],
+      "providerPlugin": "awscloudformation"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_deleteuser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteuser"
+        }
+      ]
+    },
+    "AMPLIFY_function_deleteuser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "deleteuser"
+        }
+      ]
+    },
+    "AMPLIFY_function_sensorlambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sensorlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_sensorlambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "sensorlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_shadowlambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "shadowlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_shadowlambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "shadowlambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateuser_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateuser"
+        }
+      ]
+    },
+    "AMPLIFY_function_updateuser_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "updateuser"
         }
       ]
     }
-  }
+  },
+  "storage": {}
 }
